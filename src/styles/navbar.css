@@ -1,17 +1,43 @@
 .navbar {
-    background-color: #333;
-    padding: 20px;
+    background-color: #1a1a1a !important;
+    padding: 16px 40px;
+    border-bottom: 1px solid #333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-    .navbar ul {
-        display: flex;
-        list-style: none;
-        justify-content: center;
-        gap: 30px;
+    .navbar .navbar-brand {
+        font-weight: bold;
+        color: #a78bfa !important;
+        font-size: 1.6rem;
+        letter-spacing: 1px;
+        transition: transform 0.3s ease, text-shadow 0.3s ease;
+        text-shadow: 0 0 8px rgba(167, 139, 250, 0.3);
     }
 
-    .navbar a {
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
+        .navbar .navbar-brand:hover {
+            transform: scale(1.08);
+            text-shadow: 0 0 12px rgba(167, 139, 250, 0.6);
+        }
+
+    .navbar .nav-link {
+        color: #e0e0e0 !important;
+        font-weight: 500;
+        margin: 0 14px;
+        font-size: 0.95rem;
+        letter-spacing: 0.5px;
+        transition: color 0.3s ease, transform 0.3s ease;
     }
+
+        .navbar .nav-link:hover {
+            color: #a78bfa !important;
+            transform: scale(1.05);
+        }
+
+.navbar-toggler {
+    border-color: #a78bfa;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(167,139,250,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
