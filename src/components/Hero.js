@@ -7,7 +7,7 @@ function Hero() {
     return (
         <section id="hero" className="hero-section d-flex align-items-center justify-content-center text-center">
             <div>
-                <img src="/profile.jpg" alt="Profile" className="profile-img mb-4" />
+                <img src={process.env.PUBLIC_URL + "/profile.jpg"} alt="Profile" className="profile-img mb-4" />
                 <h1 className="display-5 fw-bold">Ron Golan</h1>
                 <ReactTyped
                     strings={['Frontend Developer', 'Backend Developer', 'Software Engineer']}

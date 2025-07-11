@@ -2,21 +2,21 @@ import React from 'react';
 import '../styles/skills.css';
 
 const skills = [
-    { name: "C#", img: "/skills/csharp.png" },
-    { name: "JavaScript", img: "/skills/javascript.png" },
-    { name: "React", img: "/skills/react.png" },
-    { name: "Angular", img: "/skills/angular.png" },
-    { name: "Node.js", img: "/skills/node.png" },
-    { name: "Python", img: "/skills/python.png" },
-    { name: "Java", img: "/skills/java.png" },
-    { name: "Kotlin", img: "/skills/kotlin.png" },
-    { name: "PostgreSQL", img: "/skills/postgresql.png" },
-    { name: "MSSQL", img: "/skills/mssql.png" },
-    { name: "Git", img: "/skills/git.png" },
-    { name: "GitHub", img: "/skills/github.png" },
-    { name: "Android Studio", img: "/skills/androidstudio.png" },
-    { name: "VS Code", img: "/skills/vscode.png" },
-    { name: "Eclipse", img: "/skills/eclipse.png" },
+    { name: "C#", img: process.env.PUBLIC_URL + "/skills/csharp.png" },
+    { name: "JavaScript", img: process.env.PUBLIC_URL + "/skills/javascript.png" },
+    { name: "React", img: process.env.PUBLIC_URL + "/skills/react.png" },
+    { name: "Angular", img: process.env.PUBLIC_URL + "/skills/angular.png" },
+    { name: "Node.js", img: process.env.PUBLIC_URL + "/skills/node.png" },
+    { name: "Python", img: process.env.PUBLIC_URL + "/skills/python.png" },
+    { name: "Java", img: process.env.PUBLIC_URL + "/skills/java.png" },
+    { name: "Kotlin", img: process.env.PUBLIC_URL + "/skills/kotlin.png" },
+    { name: "PostgreSQL", img: process.env.PUBLIC_URL + "/skills/postgresql.png" },
+    { name: "MSSQL", img: process.env.PUBLIC_URL + "/skills/mssql.png" },
+    { name: "Git", img: process.env.PUBLIC_URL + "/skills/git.png" },
+    { name: "GitHub", img: process.env.PUBLIC_URL + "/skills/github.png" },
+    { name: "Android Studio", img: process.env.PUBLIC_URL + "/skills/androidstudio.png" },
+    { name: "VS Code", img: process.env.PUBLIC_URL + "/skills/vscode.png" },
+    { name: "Eclipse", img: process.env.PUBLIC_URL + "/skills/eclipse.png" },
 ];
 
 function Skills() {

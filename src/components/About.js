@@ -8,7 +8,7 @@ function About() {
             id="about" className="about-section" data-aos="fade-right" data-aos-offset="200">
             <h2 className="section-title">About Me</h2>
             <div className="about-content">
-                <img src="/about.jpg" alt="Ron Golan" className="about-img" />
+                <img src={process.env.PUBLIC_URL + "/about.jpg"} alt="Ron Golan" className="about-img" />
                 <div className="about-text">
                     <p>
                         I'm a third-year Computer Science student at Afeka College of Engineering in Tel Aviv (expected graduation: October 2026), with a strong foundation in programming, databases, and software design.

@@ -44,9 +44,13 @@
     text-align: center;
 }
 
-.text-muted {
-    color: #888;
-    font-size: 0.85rem;
+.project-tech {
+    color: #b8b8ff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    text-align: center;
+    margin-top: 4px;
 }
 .btn-outline-primary {
     color: #a78bfa;
