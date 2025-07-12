@@ -14,7 +14,7 @@ function About() {
                         I'm a third-year Computer Science student at Afeka College of Engineering in Tel Aviv (expected graduation: October 2026), with a strong foundation in programming, databases, and software design.
                     </p>
                     <p>
-                        I have hands-on experience in both frontend and backend development. My main tools include React, JavaScript, Kotlin, C, Python, SQL, and Node.js.
+                        I have hands-on experience in both frontend and backend development. My main tools include Java, JavaScript, C#, Kotlin, C, Python, SQL, and Node.js.
                     </p>
                     <p>
                         I enjoy creating clean, intuitive user experiences and solving algorithmic challenges. I'm currently focusing on personal projects and expanding my knowledge in software architecture and machine learning.
