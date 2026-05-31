@@ -16,15 +16,19 @@
     z-index: 0;
 }
 .about-img {
+    display: block;
     position: relative;
     z-index: 1;
     width: 100%;
     max-width: 380px;
+    height: auto;
     aspect-ratio: 4 / 5;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 24px;
     border: 1px solid var(--surface-border);
     box-shadow: var(--shadow);
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .about-text { color: var(--text-muted); font-size: 1.06rem; margin: 0 0 18px; }

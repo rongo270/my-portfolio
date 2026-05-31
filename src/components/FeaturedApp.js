@@ -1,20 +1,34 @@
 import React from 'react';
 import '../styles/featured.css';
 
+const CurrencyIcon = () => (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="currency-icon-svg">
+        <circle cx="8" cy="8" r="4" />
+        <circle cx="16" cy="16" r="4" />
+        <path d="M8 6v4" />
+        <path d="M6.6 7h2.8" />
+        <path d="M6.6 9h2.8" />
+        <path d="M14.8 15.2c.4-.8 2-.8 2.4 0 .4.9-1.8 1.1-1.8 1.9 0 .6.8.9 1.8.5" />
+        <path d="M16 13.8v4.4" />
+        <path d="M13.5 8.5h3.8v-3.8" />
+        <path d="M10.5 15.5H6.7v3.8" />
+    </svg>
+);
+
 const features = [
     {
-        icon: '💳',
+        icon: '\u{1F4B3}',
         title: 'Card fee calculation',
         text: 'The standout feature - CheckChange calculates the card fees on your payment so you see the real final amount before you pay, not after.',
         highlight: true,
     },
     {
-        icon: '💱',
+        icon: <CurrencyIcon />,
         title: 'Currency conversion',
         text: 'Convert prices into your own currency for accurate, real-world comparisons while shopping abroad or online.',
     },
     {
-        icon: '🏷️',
+        icon: '\u{1F3F7}\uFE0F',
         title: 'Discounts & cash',
         text: 'Factor in discounts and cash-withdrawal costs to understand what a purchase truly costs you.',
     },
@@ -55,13 +69,13 @@ function FeaturedApp() {
                 <div className="featured-stores" data-aos="fade-left">
                     <div className="platform-card card-surface android">
                         <div className="platform-top">
-                            <span className="platform-logo">🤖</span>
+                            <span className="platform-logo">{'\u{1F916}'}</span>
                             <div>
                                 <small>Available on</small>
                                 <h3>Google Play</h3>
                             </div>
                         </div>
-                        <p className="platform-meta">Android · Kotlin · Firebase</p>
+                        <p className="platform-meta">Android &middot; Kotlin &middot; Firebase</p>
                         <a
                             className="btn-primary-cta platform-btn"
                             href="https://play.google.com/store/apps/details?id=com.rongo.checkchange&pcampaignid=web_share"
@@ -80,7 +94,7 @@ function FeaturedApp() {
                                 <h3>App Store</h3>
                             </div>
                         </div>
-                        <p className="platform-meta">iOS · Swift · SwiftUI</p>
+                        <p className="platform-meta">iOS &middot; Swift &middot; SwiftUI</p>
                         <a
                             className="btn-ghost-cta platform-btn"
                             href="https://apps.apple.com/us/app/checkchange/id6772835014"

@@ -15,7 +15,7 @@ function About() {
                     <div className="about-media-glow" />
                     <img
                         src={process.env.PUBLIC_URL + '/about-illustration.svg'}
-                        alt="Mobile app development illustration"
+                        alt="Developer profile illustration"
                         className="about-img"
                     />
                 </div>

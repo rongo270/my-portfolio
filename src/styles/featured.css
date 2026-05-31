@@ -37,6 +37,16 @@
     background: var(--gradient-soft);
     border: 1px solid var(--surface-border);
 }
+.feature-icon .currency-icon-svg {
+    width: 27px;
+    height: 27px;
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+}
 .feature-title {
     display: flex; align-items: center; flex-wrap: wrap;
     gap: 10px;

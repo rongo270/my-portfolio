@@ -18,7 +18,7 @@ function Hero() {
                     <h2 className="hero-role">
                         I build mobile apps for{' '}
                         <ReactTyped
-                            strings={['Android', 'iOS', 'Android & iOS']}
+                            strings={['Android', 'iOS']}
                             typeSpeed={70}
                             backSpeed={45}
                             backDelay={1600}
