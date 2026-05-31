@@ -1,6 +1,26 @@
-.footer {
-    padding: 20px;
-    background-color: #333;
-    color: white;
-    text-align: center;
+.site-footer {
+    border-top: 1px solid var(--surface-border);
+    background: rgba(7, 11, 22, 0.6);
+    padding: 48px 24px 36px;
 }
+.footer-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+.footer-brand {
+    font-family: 'Sora', sans-serif;
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: var(--text);
+    text-decoration: none;
+}
+.footer-tag { color: var(--text-muted); font-size: 0.95rem; margin: 0; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 22px; justify-content: center; margin: 6px 0; }
+.footer-links a { color: var(--text-muted); text-decoration: none; font-weight: 600; font-size: 0.92rem; transition: color .2s ease; }
+.footer-links a:hover { color: var(--accent); }
+.footer-copy { color: #5f7088; font-size: 0.85rem; margin: 6px 0 0; }

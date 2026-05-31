@@ -1,27 +1,52 @@
 import React from 'react';
 import '../styles/about.css';
-import { useEffect } from 'react';
+
+const stats = [
+    { value: '2', label: 'Apps live on App Store & Google Play' },
+    { value: '4th', label: 'Year CS @ Afeka College of Engineering' },
+    { value: '∞', label: 'Idea → design → ship mindset' },
+];
 
 function About() {
     return (
-        <section
-            id="about" className="about-section" data-aos="fade-right" data-aos-offset="200">
-            <h2 className="section-title">About Me</h2>
-            <div className="about-content">
-                <img src={process.env.PUBLIC_URL + "/about.jpg"} alt="Ron Golan" className="about-img" />
-                <div className="about-text">
-                    <p>
-                        I'm a third-year Computer Science student at Afeka College of Engineering in Tel Aviv (expected graduation: October 2026), with a strong foundation in programming, databases, and software design.
+        <section id="about" className="section about-section">
+            <div className="about-grid">
+                <div className="about-media" data-aos="fade-right">
+                    <div className="about-media-glow" />
+                    <img
+                        src={process.env.PUBLIC_URL + '/about.jpg'}
+                        alt="Ron Golan"
+                        className="about-img"
+                    />
+                </div>
+
+                <div className="about-body" data-aos="fade-left">
+                    <span className="section-eyebrow">About me</span>
+                    <h2 className="section-heading">
+                        A mobile developer who ships <span className="gradient-text">real products</span>
+                    </h2>
+                    <p className="about-text">
+                        I'm Ron Golan, a fourth-year Computer Science student at Afeka College of
+                        Engineering and a mobile developer focused on Android and iOS. I don't just
+                        write code for exercises — I design, build and publish complete apps that
+                        real people use, taking each one from the first idea all the way to release
+                        on the stores.
                     </p>
-                    <p>
-                        I have hands-on experience in both frontend and backend development. My main tools include Java, JavaScript, C#, Kotlin, C, Python, SQL, and Node.js.
+                    <p className="about-text">
+                        My core stack is Kotlin and Android Studio on Android, and Swift, SwiftUI and
+                        Xcode on iOS, backed by Firebase and Firestore. I care about clean
+                        architecture, smooth UX and details that make an app feel professional. I'm
+                        currently <strong className="hl">open for work as a mobile developer</strong>.
                     </p>
-                    <p>
-                        I enjoy creating clean, intuitive user experiences and solving algorithmic challenges. I'm currently focusing on personal projects and expanding my knowledge in software architecture and machine learning.
-                    </p>
-                    <p>
-                        I bring motivation, attention to detail, and a passion for learning new technologies to every project I work on.
-                    </p>
+
+                    <div className="about-stats">
+                        {stats.map((s) => (
+                            <div className="about-stat card-surface" key={s.label}>
+                                <span className="about-stat-value gradient-text">{s.value}</span>
+                                <span className="about-stat-label">{s.label}</span>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>
