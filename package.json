@@ -4,7 +4,6 @@
     "private": true,
     "homepage": "https://rongo270.github.io/my-portfolio",
     "dependencies": {
-        "@emailjs/browser": "^4.4.1",
         "@testing-library/dom": "^10.4.0",
         "@testing-library/jest-dom": "^6.6.3",
         "@testing-library/react": "^16.3.0",
@@ -24,7 +23,6 @@
         "eject": "react-scripts eject",
         "predeploy": "npm run build",
         "deploy": "gh-pages -d build"
-
     },
     "eslintConfig": {
         "extends": [
