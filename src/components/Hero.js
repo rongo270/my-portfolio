@@ -8,7 +8,7 @@ function Hero() {
             <div className="hero-inner">
                 <div className="hero-left" data-aos="fade-up">
                     <span className="open-badge">
-                        <span className="pulse-dot" /> Open for work — Mobile Developer
+                        <span className="pulse-dot" /> Open for work · Full-time
                     </span>
 
                     <h1 className="hero-name">
@@ -30,7 +30,7 @@ function Hero() {
                     <p className="hero-subtitle">
                         Fourth-year Computer Science student at Afeka College of Engineering,
                         focused on Android &amp; iOS development. I take products all the way from
-                        idea to release — already live on Google Play and the App Store.
+                        idea to release - already live on Google Play and the App Store.
                     </p>
 
                     <div className="hero-cta-row">

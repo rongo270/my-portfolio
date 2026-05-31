@@ -6,7 +6,7 @@ const items = [
         status: 'In progress',
         icon: '🏛️',
         title: 'Municipality collaboration',
-        text: 'A mobile project connected to a collaboration with the Tel Aviv Municipality. More details to come — stay tuned.',
+        text: 'A mobile project connected to a collaboration with the Tel Aviv Municipality. More details to come - stay tuned.',
         locked: true,
     },
     {

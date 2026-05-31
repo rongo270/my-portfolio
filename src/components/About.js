@@ -3,8 +3,8 @@ import '../styles/about.css';
 
 const stats = [
     { value: '2', label: 'Apps live on App Store & Google Play' },
-    { value: '4th', label: 'Year CS @ Afeka College of Engineering' },
-    { value: '∞', label: 'Idea → design → ship mindset' },
+    { value: '4th', label: 'Year CS at Afeka, finishing Aug 2026' },
+    { value: 'Full-time', label: 'Available now for mobile roles' },
 ];
 
 function About() {
@@ -14,8 +14,8 @@ function About() {
                 <div className="about-media" data-aos="fade-right">
                     <div className="about-media-glow" />
                     <img
-                        src={process.env.PUBLIC_URL + '/about.jpg'}
-                        alt="Ron Golan"
+                        src={process.env.PUBLIC_URL + '/about-illustration.svg'}
+                        alt="Mobile app development illustration"
                         className="about-img"
                     />
                 </div>
@@ -27,16 +27,17 @@ function About() {
                     </h2>
                     <p className="about-text">
                         I'm Ron Golan, a fourth-year Computer Science student at Afeka College of
-                        Engineering and a mobile developer focused on Android and iOS. I don't just
-                        write code for exercises — I design, build and publish complete apps that
-                        real people use, taking each one from the first idea all the way to release
-                        on the stores.
+                        Engineering (graduating August 2026) and a mobile developer focused on
+                        Android and iOS. I don't just write code for exercises - I design, build
+                        and publish complete apps that real people use, taking each one from the
+                        first idea all the way to release on the stores.
                     </p>
                     <p className="about-text">
                         My core stack is Kotlin and Android Studio on Android, and Swift, SwiftUI and
                         Xcode on iOS, backed by Firebase and Firestore. I care about clean
                         architecture, smooth UX and details that make an app feel professional. I'm
-                        currently <strong className="hl">open for work as a mobile developer</strong>.
+                        currently <strong className="hl">open for work as a mobile developer,
+                        available for full-time positions</strong>.
                     </p>
 
                     <div className="about-stats">

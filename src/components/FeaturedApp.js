@@ -5,7 +5,7 @@ const features = [
     {
         icon: '💳',
         title: 'Card fee calculation',
-        text: 'The standout feature — CheckChange calculates the card fees on your payment so you see the real final amount before you pay, not after.',
+        text: 'The standout feature - CheckChange calculates the card fees on your payment so you see the real final amount before you pay, not after.',
         highlight: true,
     },
     {
@@ -26,12 +26,12 @@ function FeaturedApp() {
             <div className="featured-head" data-aos="fade-up">
                 <span className="section-eyebrow">Featured app</span>
                 <h2 className="section-heading">
-                    <span className="gradient-text">CheckChange</span> — know the real cost before you pay
+                    <span className="gradient-text">CheckChange</span> - know the real cost before you pay
                 </h2>
                 <p className="section-sub">
                     My first published app, live on <strong>both Android and iOS</strong>. CheckChange
                     helps people estimate the true cost of payments made abroad or online by combining
-                    currency conversion, discounts, cash-withdrawal calculations and — most importantly —
+                    currency conversion, discounts, cash-withdrawal calculations and, most importantly,
                     card fee calculation.
                 </p>
             </div>

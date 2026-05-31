@@ -32,7 +32,7 @@ function Contact() {
                 <h2 className="section-heading">Let's build something together</h2>
                 <p className="section-sub">
                     I'm open for work as a mobile developer. Whether it's a role, a project or just to
-                    talk apps — my inbox is open.
+                    talk apps - my inbox is open.
                 </p>
             </div>
 
