@@ -1,99 +1,91 @@
-<svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Programming workspace illustration">
+<svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Developer profile illustration" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0d1426"/>
-      <stop offset="1" stop-color="#070b16"/>
+      <stop offset="1" stop-color="#07101f"/>
     </linearGradient>
-    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#111a2e"/>
-      <stop offset="1" stop-color="#141f36"/>
+      <stop offset="1" stop-color="#16243d"/>
     </linearGradient>
     <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#38bdf8"/>
       <stop offset="1" stop-color="#2dd4bf"/>
     </linearGradient>
-    <linearGradient id="accent2" x1="0" y1="0" x2="1" y2="1">
+    <linearGradient id="accentAlt" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#818cf8"/>
       <stop offset="1" stop-color="#38bdf8"/>
     </linearGradient>
-    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="26"/>
-    </filter>
-    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
-      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#000" flood-opacity="0.5"/>
-    </filter>
   </defs>
 
   <rect width="400" height="500" rx="24" fill="url(#bg)"/>
-  <circle cx="318" cy="76" r="92" fill="#38bdf8" opacity="0.18" filter="url(#soft)"/>
-  <circle cx="72" cy="426" r="104" fill="#2dd4bf" opacity="0.15" filter="url(#soft)"/>
+  <path d="M0 92C58 54 112 45 162 65c56 22 96 21 144-10 38-24 70-24 94-12v457H0z" fill="#0b1324" opacity=".72"/>
+  <path d="M400 390c-48 28-103 32-166 12-58-18-102-10-148 26-33 26-62 31-86 21v51h400z" fill="#102039" opacity=".75"/>
 
-  <g stroke="#9fb0c7" stroke-width="1" opacity="0.18" fill="none">
-    <path d="M48 92h54c14 0 20 8 20 20v18"/>
-    <path d="M310 392h-42c-15 0-24-9-24-24v-22"/>
-    <path d="M52 358h46c16 0 24-8 24-24v-24"/>
-    <path d="M332 142h-38c-16 0-24 8-24 24v18"/>
+  <g fill="#9fb0c7" opacity=".16">
+    <circle cx="42" cy="58" r="2"/><circle cx="72" cy="58" r="2"/><circle cx="102" cy="58" r="2"/>
+    <circle cx="42" cy="88" r="2"/><circle cx="72" cy="88" r="2"/><circle cx="102" cy="88" r="2"/>
+    <circle cx="298" cy="414" r="2"/><circle cx="328" cy="414" r="2"/><circle cx="358" cy="414" r="2"/>
+    <circle cx="298" cy="444" r="2"/><circle cx="328" cy="444" r="2"/><circle cx="358" cy="444" r="2"/>
   </g>
 
-  <g fill="#9fb0c7" opacity="0.16">
-    <circle cx="48" cy="92" r="3"/><circle cx="122" cy="130" r="3"/>
-    <circle cx="332" cy="142" r="3"/><circle cx="270" cy="184" r="3"/>
-    <circle cx="52" cy="358" r="3"/><circle cx="122" cy="310" r="3"/>
-    <circle cx="310" cy="392" r="3"/><circle cx="244" cy="346" r="3"/>
+  <g stroke="#263a5c" stroke-width="2" fill="none" opacity=".95">
+    <path d="M56 150h52c14 0 22 8 22 22v34"/>
+    <path d="M346 158h-54c-14 0-22 8-22 22v30"/>
+    <path d="M65 355h48c14 0 22-8 22-22v-30"/>
+    <path d="M336 356h-48c-14 0-22-8-22-22v-26"/>
   </g>
 
-  <g filter="url(#shadow)">
-    <rect x="72" y="82" width="256" height="214" rx="22" fill="#0b1120" stroke="#22334f" stroke-width="2"/>
-    <rect x="84" y="94" width="232" height="190" rx="16" fill="url(#panel)"/>
-    <rect x="84" y="94" width="232" height="34" rx="16" fill="#0d1628"/>
-    <circle cx="106" cy="111" r="5" fill="#f87171"/>
-    <circle cx="124" cy="111" r="5" fill="#fbbf24"/>
-    <circle cx="142" cy="111" r="5" fill="#34d399"/>
-    <text x="200" y="116" font-family="Sora, Inter, sans-serif" font-size="12" font-weight="700" fill="#9fb0c7" text-anchor="middle">portfolio.dev</text>
+  <g>
+    <rect x="54" y="78" width="292" height="254" rx="28" fill="#070d1a" opacity=".45"/>
+    <rect x="64" y="68" width="272" height="252" rx="26" fill="url(#card)" stroke="#263a5c" stroke-width="2"/>
+    <rect x="82" y="88" width="236" height="212" rx="18" fill="#0b1120" stroke="#22334f" stroke-width="2"/>
 
-    <g font-family="Consolas, 'Courier New', monospace" font-size="13" font-weight="700">
-      <text x="106" y="154" fill="#818cf8">const</text>
-      <text x="150" y="154" fill="#e8eef7">developer</text>
-      <text x="226" y="154" fill="#9fb0c7">=</text>
-      <text x="244" y="154" fill="#2dd4bf">{</text>
+    <rect x="82" y="88" width="236" height="38" rx="18" fill="#0e182b"/>
+    <circle cx="105" cy="107" r="5" fill="#ef4444"/>
+    <circle cx="123" cy="107" r="5" fill="#f59e0b"/>
+    <circle cx="141" cy="107" r="5" fill="#22c55e"/>
+    <rect x="210" y="101" width="82" height="10" rx="5" fill="#263855"/>
 
-      <text x="122" y="182" fill="#38bdf8">skills:</text>
-      <text x="184" y="182" fill="#e8eef7">[React, Node]</text>
-      <text x="122" y="210" fill="#38bdf8">focus:</text>
-      <text x="176" y="210" fill="#e8eef7">'clean code'</text>
-      <text x="122" y="238" fill="#38bdf8">build:</text>
-      <text x="176" y="238" fill="#e8eef7">ship()</text>
-      <text x="244" y="266" fill="#2dd4bf">}</text>
-    </g>
+    <circle cx="138" cy="181" r="38" fill="#13223a" stroke="#2f456b" stroke-width="2"/>
+    <circle cx="138" cy="169" r="19" fill="url(#accent)"/>
+    <path d="M99 220c10-31 68-31 78 0" fill="#1b3150"/>
+
+    <rect x="198" y="154" width="80" height="10" rx="5" fill="url(#accent)"/>
+    <rect x="198" y="180" width="98" height="8" rx="4" fill="#2a3d5e"/>
+    <rect x="198" y="204" width="74" height="8" rx="4" fill="#2a3d5e"/>
+    <rect x="198" y="228" width="106" height="8" rx="4" fill="#2a3d5e"/>
+    <rect x="198" y="252" width="64" height="8" rx="4" fill="#2a3d5e"/>
+
+    <rect x="104" y="252" width="54" height="12" rx="6" fill="#263855"/>
+    <rect x="166" y="252" width="24" height="12" rx="6" fill="#38bdf8" opacity=".85"/>
   </g>
 
-  <g filter="url(#shadow)">
-    <rect x="46" y="318" width="184" height="96" rx="18" fill="#0b1120" stroke="#22334f" stroke-width="2"/>
-    <rect x="62" y="338" width="56" height="8" rx="4" fill="url(#accent)"/>
-    <rect x="62" y="360" width="136" height="7" rx="3.5" fill="#21324f"/>
-    <rect x="62" y="380" width="104" height="7" rx="3.5" fill="#21324f"/>
-    <text x="62" y="402" font-family="Consolas, 'Courier New', monospace" font-size="14" font-weight="700" fill="#2dd4bf">$ npm run build</text>
+  <g>
+    <rect x="52" y="348" width="296" height="48" rx="17" fill="#0b1120" stroke="#22334f" stroke-width="2"/>
+    <path d="M87 373l-15-13 15-13" fill="none" stroke="#38bdf8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M313 347l15 13-15 13" fill="none" stroke="#2dd4bf" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="114" y="360" width="72" height="8" rx="4" fill="#263855"/>
+    <rect x="198" y="360" width="54" height="8" rx="4" fill="url(#accentAlt)"/>
+    <rect x="114" y="377" width="136" height="7" rx="3.5" fill="#263855"/>
+    <rect x="262" y="377" width="28" height="7" rx="3.5" fill="#2dd4bf" opacity=".85"/>
   </g>
 
-  <g filter="url(#shadow)">
-    <rect x="252" y="314" width="98" height="74" rx="18" fill="#111a2e" stroke="#1d2c49"/>
-    <path d="M285 350l-16-14 16-14" fill="none" stroke="#38bdf8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M317 322l16 14-16 14" fill="none" stroke="#2dd4bf" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M306 318l-12 38" fill="none" stroke="#818cf8" stroke-width="6" stroke-linecap="round"/>
+  <g>
+    <rect x="36" y="250" width="78" height="68" rx="18" fill="#111a2e" stroke="#263a5c" stroke-width="2"/>
+    <path d="M58 283h34M58 299h22" stroke="#38bdf8" stroke-width="7" stroke-linecap="round"/>
+    <path d="M61 266l15-8 15 8-15 8z" fill="#2dd4bf"/>
   </g>
 
-  <g filter="url(#shadow)">
-    <circle cx="84" cy="218" r="30" fill="#111a2e" stroke="#1d2c49"/>
-    <text x="84" y="228" font-family="Sora, Inter, sans-serif" font-size="29" font-weight="800" fill="#38bdf8" text-anchor="middle">{ }</text>
+  <g>
+    <rect x="284" y="250" width="80" height="68" rx="18" fill="#111a2e" stroke="#263a5c" stroke-width="2"/>
+    <circle cx="310" cy="284" r="10" fill="#38bdf8" opacity=".9"/>
+    <circle cx="332" cy="284" r="10" fill="#2dd4bf" opacity=".9"/>
+    <path d="M310 284h22" stroke="#e8eef7" stroke-width="4" stroke-linecap="round" opacity=".72"/>
   </g>
 
-  <g filter="url(#shadow)">
-    <circle cx="322" cy="220" r="30" fill="#111a2e" stroke="#1d2c49"/>
-    <path d="M308 222h28M322 208v28" stroke="url(#accent)" stroke-width="6" stroke-linecap="round"/>
-  </g>
-
-  <g opacity="0.7">
-    <rect x="96" y="446" width="208" height="8" rx="4" fill="#18243d"/>
-    <rect x="144" y="446" width="112" height="8" rx="4" fill="url(#accent2)"/>
+  <g>
+    <rect x="96" y="430" width="208" height="8" rx="4" fill="#18243d"/>
+    <rect x="146" y="430" width="108" height="8" rx="4" fill="url(#accent)"/>
   </g>
 </svg>
