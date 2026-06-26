@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#0a0e1a" />
     <meta name="description"
-        content="Ron Golan - Cyber Security & Mobile. ML-powered phishing detection, SAST and APK auditing tools. Final-year CS student at Afeka, graduating Aug 2026. Open for work." />
+        content="Ron Golan - Cyber Security. ML-powered phishing detection, SAST and APK auditing tools. Final-year CS student at Afeka, graduating Aug 2026. Open for work." />
     <meta property="og:title" content="Ron Golan - Cyber Security" />
     <meta property="og:description"
         content="Security tools: ML phishing detection, SAST and APK auditing. Creator of CheckChange. Open for work." />
@@ -249,7 +249,8 @@
             70% { box-shadow: 0 0 0 10px rgba(45, 212, 191, 0); }
             100% { box-shadow: 0 0 0 0 rgba(45, 212, 191, 0); }
         }
-        .hero-name { font-size: clamp(2.4rem, 5.4vw, 3.9rem); font-weight: 800; line-height: 1.05; margin: 0 0 14px; }
+        .hero-name { font-size: clamp(2.4rem, 5.4vw, 3.9rem); font-weight: 800; line-height: 1.12; margin: 0 0 14px; }
+        .hero-name .gradient-text { display: inline-block; padding-bottom: 0.1em; }
         .hero-role {
             font-size: clamp(1.2rem, 2.6vw, 1.7rem);
             font-weight: 600;
@@ -515,6 +516,50 @@
         @media (max-width: 980px) { .proj-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 540px) { .proj-grid { grid-template-columns: 1fr; } }
 
+        /* project icon picker + detail panel */
+        .proj-picker { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-bottom: 28px; }
+        .proj-pick {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            width: 132px;
+            padding: 18px 12px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--surface-border);
+            color: var(--text-muted);
+            cursor: pointer;
+            font-family: inherit;
+            transition: transform .25s ease, border-color .25s ease, color .25s ease, background .25s ease;
+        }
+        .proj-pick:hover { transform: translateY(-4px); border-color: var(--accent); color: var(--text); }
+        .proj-pick.is-active { border-color: var(--accent); color: var(--text); background: var(--gradient-soft); box-shadow: var(--shadow-glow); }
+        .proj-pick-icon {
+            width: 54px; height: 54px;
+            display: grid; place-items: center;
+            font-size: 1.6rem;
+            border-radius: 14px;
+            background: var(--gradient-soft);
+            border: 1px solid var(--surface-border);
+            transition: background .25s ease;
+        }
+        .proj-pick.is-active .proj-pick-icon { background: var(--gradient); }
+        .proj-pick-name { font-weight: 700; font-size: 0.92rem; }
+
+        .proj-detail { max-width: 720px; margin: 0 auto; padding: 34px; }
+        .proj-detail.is-highlight {
+            border-color: rgba(45, 212, 191, 0.45);
+            background:
+                linear-gradient(180deg, rgba(45, 212, 191, 0.08), rgba(56, 189, 248, 0.05)),
+                linear-gradient(180deg, var(--surface), var(--surface-2));
+            box-shadow: 0 0 36px rgba(45, 212, 191, 0.16);
+        }
+        .proj-detail-inner { display: flex; flex-direction: column; align-items: flex-start; }
+        .proj-detail .proj-flag { display: inline-block; }
+        .proj-detail .proj-text { font-size: 0.98rem; }
+        @media (max-width: 420px) { .proj-pick { width: calc(50% - 7px); } }
+
         /* ===== Tech ===== */
         .tech-head { text-align: center; margin: 0 auto 48px; display: flex; flex-direction: column; align-items: center; }
         .tech-head .section-sub { text-align: center; }
@@ -651,9 +696,6 @@
                         <li class="nav-item"><a class="nav-link" href="#tech">Tech</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                         <li class="nav-item ms-lg-2">
-                            <a class="nav-switch" href="/my-portfolio/">📱 Mobile</a>
-                        </li>
-                        <li class="nav-item ms-lg-2">
                             <a class="nav-cta" href="https://www.linkedin.com/in/ron-golan-27171028b/" target="_blank"
                                 rel="noopener noreferrer">Hire me</a>
                         </li>
@@ -666,13 +708,13 @@
         <section id="hero" class="hero-section">
             <div class="hero-inner">
                 <div class="hero-left" data-aos="fade-up">
-                    <span class="open-badge"><span class="pulse-dot"></span> Open for work · Security &amp; Mobile</span>
+                    <span class="open-badge"><span class="pulse-dot"></span> Open for work · Full-time</span>
                     <h1 class="hero-name">Hi, I'm <span class="gradient-text">Ron Golan</span></h1>
                     <h2 class="hero-role">I work in <span id="typed" class="typed-text"></span><span class="typed-cursor">|</span></h2>
                     <p class="hero-subtitle">
                         Final-year Computer Science student at Afeka College of Engineering, graduating
                         August 2026. I build security tools - from an ML-powered phishing detection system to
-                        static code and APK analyzers - and ship real mobile apps to the stores.
+                        static code analyzers and Android APK auditing.
                     </p>
                     <div class="hero-cta-row">
                         <a class="btn-primary-cta" href="#projects">View my security projects ↓</a>
@@ -685,10 +727,6 @@
                                 <svg viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
                             </span>
                             <span><small>Open source on</small>GitHub</span>
-                        </a>
-                        <a class="store-link" href="/my-portfolio/">
-                            <span class="store-icon" aria-hidden="true">📱</span>
-                            <span><small>See my apps</small>Mobile portfolio</span>
                         </a>
                     </div>
                 </div>
@@ -731,15 +769,14 @@
                     <h2 class="section-heading">A security-minded developer finishing his <span class="gradient-text">CS degree</span></h2>
                     <p class="about-text">
                         I'm Ron Golan, a final-year Computer Science student at Afeka College of Engineering,
-                        about to finish my degree in August 2026. Alongside shipping mobile apps, my current
-                        focus is cyber security - I design and build tools that find real vulnerabilities
-                        and stop real attacks.
+                        about to finish my degree in August 2026. My focus is cyber security - I design and
+                        build tools that find real vulnerabilities and stop real attacks.
                     </p>
                     <p class="about-text">
                         My security work spans machine-learning phishing detection, static application security
                         testing (SAST) and Android APK auditing. I care about clean, explainable results -
                         tools that don't just flag a problem but explain it and show the fix. I'm currently
-                        <strong class="hl">open for work in security and mobile</strong>.
+                        <strong class="hl">open for work, full-time</strong>.
                     </p>
                     <div class="about-stats">
                         <div class="about-stat card-surface">
@@ -781,8 +818,8 @@
                     <p class="focus-text">Scanning source code for OWASP Top 10 bugs - SQLi, XSS, path traversal - with plain-English fixes.</p>
                 </div>
                 <div class="focus-card card-surface" data-aos="fade-up" data-aos-delay="180">
-                    <div class="focus-icon">📱</div>
-                    <h3 class="focus-title">Mobile security</h3>
+                    <div class="focus-icon">📦</div>
+                    <h3 class="focus-title">App &amp; APK security</h3>
                     <p class="focus-text">Auditing Android APK/AAB files for hard-coded secrets, weak signing and dangerous permissions.</p>
                 </div>
                 <div class="focus-card card-surface" data-aos="fade-up" data-aos-delay="270">
@@ -793,109 +830,36 @@
             </div>
         </section>
 
-        <!-- ===== Mobile / Cyber switch ===== -->
-        <div class="switch-wrap" data-aos="fade-up">
-            <div class="switch-center">
-                <div class="switch-row">
-                    <a class="switch-pill" href="/my-portfolio/">📱 Mobile Developer</a>
-                    <a class="switch-pill is-active" href="#projects">🛡 Cyber Security</a>
-                </div>
-            </div>
-        </div>
-
         <!-- ===== Projects ===== -->
         <section id="projects" class="section">
             <div class="proj-head" data-aos="fade-up">
                 <span class="section-eyebrow">Security projects</span>
                 <h2 class="section-heading">Tools I've built to <span class="gradient-text">find and stop threats</span></h2>
                 <p class="section-sub">
-                    Four security projects - from my ML final-year project to static analyzers and on-device
-                    malware scanning. All open source on GitHub.
+                    Pick a project to see what it does. All four are open source on GitHub.
                 </p>
             </div>
 
-            <div class="proj-grid">
-                <!-- AntiPhishing - final project -->
-                <div class="proj-card card-surface is-highlight" data-aos="fade-up">
-                    <div class="proj-icon">🛡</div>
-                    <span class="proj-flag">🎓 Final project</span>
-                    <h3 class="proj-title">AntiPhishing</h3>
-                    <p class="proj-text">
-                        My final-year project, presented 8 July 2026 at Afeka. An ML-powered system that detects
-                        phishing in real time - extracting URL and content features and classifying links as
-                        phishing or safe, served through a Dockerized Python API.
-                    </p>
-                    <div class="proj-tags">
-                        <span class="proj-tag">Python</span>
-                        <span class="proj-tag">Machine Learning</span>
-                        <span class="proj-tag">Docker</span>
-                    </div>
-                    <a class="repo-link" href="https://github.com/rongo270/antiphishing-server" target="_blank" rel="noopener noreferrer">
-                        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-                        View repo →
-                    </a>
-                </div>
-
-                <!-- APKInspect -->
-                <div class="proj-card card-surface" data-aos="fade-up" data-aos-delay="90">
-                    <div class="proj-icon">📦</div>
-                    <h3 class="proj-title">APKInspect</h3>
-                    <p class="proj-text">
-                        A zero-dependency Python scanner for Android APK/AAB files. Static analysis flags
-                        hard-coded secrets, exported components, weak signing and dangerous permissions, then
-                        scores app safety from 0-100.
-                    </p>
-                    <div class="proj-tags">
-                        <span class="proj-tag">Python</span>
-                        <span class="proj-tag">Static analysis</span>
-                        <span class="proj-tag">Android</span>
-                    </div>
-                    <a class="repo-link" href="https://github.com/rongo270/APKInspect" target="_blank" rel="noopener noreferrer">
-                        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-                        View repo →
-                    </a>
-                </div>
-
-                <!-- SafeTheCode -->
-                <div class="proj-card card-surface" data-aos="fade-up" data-aos-delay="180">
-                    <div class="proj-icon">🐞</div>
-                    <h3 class="proj-title">SafeTheCode</h3>
-                    <p class="proj-text">
-                        A local SAST tool that finds security bugs in your code - SQLi, XSS, path traversal - and
-                        explains each in plain English with the exact fix. Uses tree-sitter parsing and taint
-                        analysis, mapped to the OWASP Top 10.
-                    </p>
-                    <div class="proj-tags">
-                        <span class="proj-tag">Python</span>
-                        <span class="proj-tag">SAST</span>
-                        <span class="proj-tag">OWASP</span>
-                    </div>
-                    <a class="repo-link" href="https://github.com/rongo270/SafeTheCode" target="_blank" rel="noopener noreferrer">
-                        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-                        View repo →
-                    </a>
-                </div>
-
-                <!-- RiskScope -->
-                <div class="proj-card card-surface" data-aos="fade-up" data-aos-delay="270">
-                    <div class="proj-icon">🦠</div>
-                    <h3 class="proj-title">RiskScope</h3>
-                    <p class="proj-text">
-                        An Android app that scans every installed app, hashes its APK and checks it against a
-                        threat database to detect malware - combining remote verification with on-device
-                        heuristics to flag apps as DANGER, WATCH or SAFE.
-                    </p>
-                    <div class="proj-tags">
-                        <span class="proj-tag">Kotlin</span>
-                        <span class="proj-tag">Jetpack Compose</span>
-                        <span class="proj-tag">Android</span>
-                    </div>
-                    <a class="repo-link" href="https://github.com/rongo270/RiskScope" target="_blank" rel="noopener noreferrer">
-                        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-                        View repo →
-                    </a>
-                </div>
+            <div class="proj-picker" data-aos="fade-up">
+                <button class="proj-pick is-active" type="button" data-proj="antiphishing">
+                    <span class="proj-pick-icon">🛡</span>
+                    <span class="proj-pick-name">AntiPhishing</span>
+                </button>
+                <button class="proj-pick" type="button" data-proj="apkinspect">
+                    <span class="proj-pick-icon">📦</span>
+                    <span class="proj-pick-name">APKInspect</span>
+                </button>
+                <button class="proj-pick" type="button" data-proj="safethecode">
+                    <span class="proj-pick-icon">🐞</span>
+                    <span class="proj-pick-name">SafeTheCode</span>
+                </button>
+                <button class="proj-pick" type="button" data-proj="riskscope">
+                    <span class="proj-pick-icon">🦠</span>
+                    <span class="proj-pick-name">RiskScope</span>
+                </button>
             </div>
+
+            <div class="proj-detail card-surface" id="projDetail" data-aos="fade-up"></div>
         </section>
 
         <!-- ===== Tech ===== -->
@@ -914,18 +878,15 @@
                         <span class="tech-pill">Machine Learning</span>
                         <span class="tech-pill">SAST</span>
                         <span class="tech-pill">Static analysis</span>
-                        <span class="tech-pill">Taint analysis</span>
-                        <span class="tech-pill">OWASP Top 10</span>
                     </div>
                 </div>
                 <div class="tech-group card-surface accent-b" data-aos="fade-up" data-aos-delay="80">
-                    <h3 class="tech-group-title">Mobile &amp; reverse engineering</h3>
+                    <h3 class="tech-group-title">Android &amp; reverse engineering</h3>
                     <div class="tech-pills">
                         <span class="tech-pill"><img class="tech-pill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" alt="" loading="lazy" onerror="this.style.display='none'">Android</span>
                         <span class="tech-pill"><img class="tech-pill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="" loading="lazy" onerror="this.style.display='none'">Kotlin</span>
                         <span class="tech-pill">Jetpack Compose</span>
                         <span class="tech-pill">APK / AAB analysis</span>
-                        <span class="tech-pill">tree-sitter</span>
                     </div>
                 </div>
                 <div class="tech-group card-surface accent-c" data-aos="fade-up" data-aos-delay="160">
@@ -969,7 +930,7 @@
                 <span class="section-eyebrow">Contact</span>
                 <h2 class="section-heading">Let's build something secure together</h2>
                 <p class="section-sub">
-                    I'm open for work in cyber security and mobile. Whether it's a role, a project or just to
+                    I'm open for work in cyber security. Whether it's a role, a project or just to
                     talk security - my inbox is open.
                 </p>
             </div>
@@ -985,7 +946,7 @@
                     </ul>
                     <div class="contact-stores">
                         <a class="contact-store" href="https://github.com/rongo270" target="_blank" rel="noopener noreferrer">🐙 GitHub</a>
-                        <a class="contact-store" href="/my-portfolio/">📱 Mobile portfolio</a>
+                        <a class="contact-store" href="https://www.linkedin.com/in/ron-golan-27171028b/" target="_blank" rel="noopener noreferrer">🔗 LinkedIn</a>
                     </div>
                 </div>
             </div>
@@ -995,9 +956,8 @@
         <footer class="site-footer">
             <div class="footer-inner">
                 <a class="footer-brand" href="#hero">Ron<span class="gradient-text">Golan</span></a>
-                <p class="footer-tag">Cyber Security &amp; Mobile · Open for work</p>
+                <p class="footer-tag">Cyber Security · Open for work</p>
                 <div class="footer-links">
-                    <a href="/my-portfolio/">Mobile portfolio</a>
                     <a href="https://github.com/rongo270" target="_blank" rel="noopener noreferrer">GitHub</a>
                     <a href="https://www.linkedin.com/in/ron-golan-27171028b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 </div>
@@ -1020,9 +980,9 @@
         // footer year
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // typed effect: cycles between Cyber Security and Mobile Development
+        // typed effect: cycles security headlines
         (function () {
-            var words = ['Cyber Security', 'Mobile Development'];
+            var words = ['Cyber Security', 'Threat Detection', 'Secure Code'];
             var el = document.getElementById('typed');
             var w = 0, c = 0, deleting = false;
             function tick() {
@@ -1035,6 +995,58 @@
                 setTimeout(tick, delay);
             }
             tick();
+        })();
+
+        // security projects: click an icon to show its description
+        (function () {
+            var GH = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>';
+            var projects = {
+                antiphishing: {
+                    icon: '🛡', flag: '🎓 Final project', title: 'AntiPhishing',
+                    text: 'My final-year project, presented 8 July 2026 at Afeka. An ML-powered system that detects phishing in real time - extracting URL and content features and classifying links as phishing or safe, served through a Dockerized Python API.',
+                    tags: ['Python', 'Machine Learning', 'Docker'], repo: 'https://github.com/rongo270/antiphishing-server'
+                },
+                apkinspect: {
+                    icon: '📦', title: 'APKInspect',
+                    text: 'A zero-dependency Python scanner for Android APK/AAB files. Static analysis flags hard-coded secrets, exported components, weak signing and dangerous permissions, then scores app safety from 0-100.',
+                    tags: ['Python', 'Static analysis', 'Android'], repo: 'https://github.com/rongo270/APKInspect'
+                },
+                safethecode: {
+                    icon: '🐞', title: 'SafeTheCode',
+                    text: 'A local SAST tool that finds security bugs in your code - SQLi, XSS, path traversal - and explains each in plain English with the exact fix. Uses tree-sitter parsing and taint analysis, mapped to the OWASP Top 10.',
+                    tags: ['Python', 'SAST', 'OWASP'], repo: 'https://github.com/rongo270/SafeTheCode'
+                },
+                riskscope: {
+                    icon: '🦠', title: 'RiskScope',
+                    text: 'An Android app that scans every installed app, hashes its APK and checks it against a threat database to detect malware - combining remote verification with on-device heuristics to flag apps as DANGER, WATCH or SAFE.',
+                    tags: ['Kotlin', 'Jetpack Compose', 'Android'], repo: 'https://github.com/rongo270/RiskScope'
+                }
+            };
+            var detail = document.getElementById('projDetail');
+            var picks = document.querySelectorAll('.proj-pick');
+            function render(key) {
+                var p = projects[key];
+                var tags = p.tags.map(function (t) { return '<span class="proj-tag">' + t + '</span>'; }).join('');
+                var flag = p.flag ? '<span class="proj-flag">' + p.flag + '</span>' : '';
+                detail.className = 'proj-detail card-surface' + (p.flag ? ' is-highlight' : '');
+                detail.innerHTML =
+                    '<div class="proj-detail-inner">' +
+                    '<div class="proj-icon">' + p.icon + '</div>' +
+                    flag +
+                    '<h3 class="proj-title">' + p.title + '</h3>' +
+                    '<p class="proj-text">' + p.text + '</p>' +
+                    '<div class="proj-tags">' + tags + '</div>' +
+                    '<a class="repo-link" href="' + p.repo + '" target="_blank" rel="noopener noreferrer">' + GH + ' View repo →</a>' +
+                    '</div>';
+            }
+            picks.forEach(function (b) {
+                b.addEventListener('click', function () {
+                    picks.forEach(function (x) { x.classList.remove('is-active'); });
+                    b.classList.add('is-active');
+                    render(b.getAttribute('data-proj'));
+                });
+            });
+            render('antiphishing');
         })();
     </script>
 </body>
