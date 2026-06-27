@@ -546,6 +546,7 @@
         }
         .proj-pick.is-active .proj-pick-icon { background: var(--gradient); }
         .proj-pick-name { font-weight: 700; font-size: 0.92rem; }
+        .proj-pick-icon img, .proj-icon img { width: 100%; height: 100%; object-fit: contain; border-radius: inherit; display: block; }
 
         .proj-detail { max-width: 720px; margin: 0 auto; padding: 34px; }
         .proj-detail.is-highlight {
@@ -709,7 +710,7 @@
                 <div class="hero-left" data-aos="fade-up">
                     <span class="open-badge"><span class="pulse-dot"></span> Open for work · Full-time</span>
                     <h1 class="hero-name">Hi, I'm <span class="gradient-text">Ron Golan</span></h1>
-                    <h2 class="hero-role">I work in <span id="typed" class="typed-text"></span><span class="typed-cursor">|</span></h2>
+                    <h2 class="hero-role">I work on <span id="typed" class="typed-text"></span><span class="typed-cursor">|</span></h2>
                     <p class="hero-subtitle">
                         Final-year Computer Science student at Afeka College of Engineering, graduating
                         August 2026. I build security tools - from an ML-powered phishing detection system to
@@ -807,7 +808,7 @@
 
             <div class="proj-picker" data-aos="fade-up">
                 <button class="proj-pick is-active" type="button" data-proj="antiphishing">
-                    <span class="proj-pick-icon">🛡</span>
+                    <span class="proj-pick-icon"><img src="/my-portfolio/cyber/icons/antiphishing.png" alt="AntiPhishing icon" /></span>
                     <span class="proj-pick-name">AntiPhishing</span>
                 </button>
                 <button class="proj-pick" type="button" data-proj="apkinspect">
@@ -815,11 +816,11 @@
                     <span class="proj-pick-name">APKInspect</span>
                 </button>
                 <button class="proj-pick" type="button" data-proj="safethecode">
-                    <span class="proj-pick-icon">🐞</span>
+                    <span class="proj-pick-icon"><img src="/my-portfolio/cyber/icons/safethecode.png" alt="SafeTheCode icon" /></span>
                     <span class="proj-pick-name">SafeTheCode</span>
                 </button>
                 <button class="proj-pick" type="button" data-proj="riskscope">
-                    <span class="proj-pick-icon">🦠</span>
+                    <span class="proj-pick-icon"><img src="/my-portfolio/cyber/icons/riskscope.png" alt="RiskScope icon" /></span>
                     <span class="proj-pick-name">RiskScope</span>
                 </button>
             </div>
@@ -967,7 +968,7 @@
             var GH = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>';
             var projects = {
                 antiphishing: {
-                    icon: '🛡', flag: '🎓 Final project', title: 'AntiPhishing',
+                    icon: '<img src="/my-portfolio/cyber/icons/antiphishing.png" alt="AntiPhishing icon" />', flag: '🎓 Final project', title: 'AntiPhishing',
                     text: 'My final-year project, presented 8 July 2026 at Afeka. An ML-powered system that detects phishing in real time - extracting URL and content features and classifying links as phishing or safe, served through a Dockerized Python API.',
                     tags: ['Python', 'Machine Learning', 'Docker'], repo: 'https://github.com/rongo270/antiphishing-server'
                 },
@@ -977,12 +978,12 @@
                     tags: ['Python', 'Static analysis', 'Android'], repo: 'https://github.com/rongo270/APKInspect'
                 },
                 safethecode: {
-                    icon: '🐞', title: 'SafeTheCode',
+                    icon: '<img src="/my-portfolio/cyber/icons/safethecode.png" alt="SafeTheCode icon" />', title: 'SafeTheCode',
                     text: 'A local SAST tool that finds security bugs in your code - SQLi, XSS, path traversal - and explains each in plain English with the exact fix. Uses tree-sitter parsing and taint analysis, mapped to the OWASP Top 10.',
                     tags: ['Python', 'SAST', 'OWASP'], repo: 'https://github.com/rongo270/SafeTheCode'
                 },
                 riskscope: {
-                    icon: '🦠', title: 'RiskScope',
+                    icon: '<img src="/my-portfolio/cyber/icons/riskscope.png" alt="RiskScope icon" />', title: 'RiskScope',
                     text: 'An Android app that scans every installed app, hashes its APK and checks it against a threat database to detect malware - combining remote verification with on-device heuristics to flag apps as DANGER, WATCH or SAFE.',
                     tags: ['Kotlin', 'Jetpack Compose', 'Android'], repo: 'https://github.com/rongo270/RiskScope'
                 }
