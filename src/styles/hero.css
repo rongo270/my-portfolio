@@ -40,9 +40,11 @@
 .hero-name {
     font-size: clamp(2.4rem, 5.4vw, 3.9rem);
     font-weight: 800;
-    line-height: 1.05;
+    line-height: 1.12;
     margin: 0 0 14px;
+    color: var(--text);
 }
+.hero-name .gradient-text { display: inline-block; padding-bottom: 0.1em; }
 
 .hero-role {
     font-size: clamp(1.2rem, 2.6vw, 1.7rem);

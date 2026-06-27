@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
-import Focus from './components/Focus';
 import FeaturedApp from './components/FeaturedApp';
 import WorkingOn from './components/WorkingOn';
 import Skills from './components/Skills';
@@ -22,7 +21,6 @@ function App() {
             <Navbar />
             <Hero />
             <About />
-            <Focus />
             <FeaturedApp />
             <WorkingOn />
             <Skills />

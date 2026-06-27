@@ -4,7 +4,6 @@ import '../styles/navbar.css';
 const links = [
     { href: '#hero', label: 'Home' },
     { href: '#about', label: 'About' },
-    { href: '#focus', label: 'Focus' },
     { href: '#checkchange', label: 'CheckChange' },
     { href: '#tech', label: 'Tech' },
     { href: '#contact', label: 'Contact' },

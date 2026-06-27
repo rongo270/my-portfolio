@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/about.css';
 
 const stats = [
+    { value: '2 yrs', label: 'Building & shipping mobile apps' },
     { value: '2', label: 'Apps live on App Store & Google Play' },
     { value: '4th', label: 'Year CS at Afeka, finishing Aug 2026' },
     { value: 'Full-time', label: 'Available now for mobile roles' },
@@ -27,8 +28,8 @@ function About() {
                     </h2>
                     <p className="about-text">
                         I'm Ron Golan, a fourth-year Computer Science student at Afeka College of
-                        Engineering (graduating August 2026) and a mobile developer focused on
-                        Android and iOS. I don't just write code for exercises - I design, build
+                        Engineering (graduating August 2026) and a mobile developer with around
+                        two years building Android and iOS apps. I don't just write code for exercises - I design, build
                         and publish complete apps that real people use, taking each one from the
                         first idea all the way to release on the stores.
                     </p>
